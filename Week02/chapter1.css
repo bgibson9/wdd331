@@ -1,0 +1,24 @@
+/* 01-selectors/descendent-combinator.html (excerpt) */
+form h1 {
+color: #009;
+}
+
+form p {
+    font-size: 22px;
+    }
+
+    /* 01-selectors/child-combinator.html (excerpt) */
+form > p {
+font-size: 22px;
+}
+
+
+label + input {
+    display: block;
+    clear: both;
+    }
+
+* + fieldset {
+    margin: 5em 0;
+    }
+

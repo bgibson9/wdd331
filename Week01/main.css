@@ -27,7 +27,7 @@ main {
 body {
     font-size: 16px;
     font-family: Helvetica, Arial, sans-serif;
-    margin: 0 auto;
+    /* margin: 0 auto; Bro. Blaylock said to remove in W01 comments */
     padding: 0;
     
 }
