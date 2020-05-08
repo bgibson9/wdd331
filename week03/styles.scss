@@ -1,0 +1,118 @@
+// Variables
+//colors
+$error-color: red; //Bro Blaylock added this, I didn't have it
+$body-background-color: darkred;
+$form-background-color: #d0b986;
+$input-color: #f3ebd5;
+$headlines-color: white;
+
+//I always add box-sizing but didn't think to on this. Bro. Blaylock had it.
+//  Global styles
+ *, *:before, *:after {
+    box-sizing: border-box;   
+}
+
+//breakpoints
+$break-small: 20em;  // 20em 320px min-width
+$break-medium: 31em; // 31em 480px min-width
+$break-large: 60em; // 60em 900px min-width
+
+// mixins
+
+
+@mixin flex-container($axis, $wrap: nowrap) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: $axis $wrap;
+    -ms-flex-flow: $axis $wrap;
+    flex-flow: $axis $wrap;
+}
+
+@mixin center ($max-width, $width: 90%){ //had to fix this
+    width: $width;
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+@mixin breakpoint($break) {
+    @if $break == large {  //if the value in the variable $break is equal to "large" then do the following.
+    @media (max-width: $break-large) { @content; } //@content allows us to pass css into our mixins!
+    }
+    @else if $break == medium {
+    @media (max-width: $break-medium) { @content; }
+    }
+    @else if $break == small {
+    @media (max-width: $break-small) { @content; }
+    } @else {
+    @media ($break) { @content; }
+    }
+  } 
+
+  // Base Styles
+body {
+    background-color: $body-background-color;
+    // background: white;
+    // @include breakpoint(large) { background: red; }
+    // @include breakpoint(medium) { background: cyan; }
+    // @include breakpoint(small) { background: green; }
+    // @include breakpoint(max-width) { background: yellow; }
+    } 
+
+
+#contactform {
+    background-color: $form-background-color;
+    input, textarea {
+        background-color: $input-color;
+        flex: 2;
+    }
+    //had to fix all of these to have just @ include
+    //last step
+    //here is how it was
+    // @media (min-width: $break-small) {
+    //     & {
+    //        @include center(90, 600);
+    //      } 
+    // }
+    // @media (min-width: $break-medium ) {
+    //     & {
+    //         @include center(70, 700);
+    //     }
+    // }
+    // @media (min-width: $break-large ) {
+    //     & {
+    //         @include center(70, 900);
+    //       }
+    // }
+    //How it should have been:
+    @include breakpoint(medium) { @include center(700px) }
+    @include breakpoint(large) { @include center (900px, 70%) }
+}
+
+// fieldset > div {
+//     @include flex-container(column);        
+// }
+
+#contactform fieldset > div { //had to add #contactform
+    @include flex-container(column);  //took out wrap from (row, wrap)
+    label {  //added all of this label and include breakpoint(medium)
+        flex: 1;
+        text-align: left;
+    }
+
+    @include breakpoint(medium) { //added all this from Bro. Blaylock's code
+        @include flex-container(row);
+        justify-content: space-between;
+        margin-bottom: 1em;
+        label {
+            text-align: right;
+            margin-right: 1em;
+        }
+    }
+}
+
+h1 {
+    color: $headlines-color;
+}
