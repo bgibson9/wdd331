@@ -6,7 +6,7 @@ $form-background-color: #d0b986;
 $input-color: #f3ebd5;
 $headlines-color: white;
 
-//I always add box-sizing but didn't think to on this. Bro. Blaylock had it.
+//I always add box-sizing but didn't think to on this. Bro. Blaylock had it in his code.
 //  Global styles
  *, *:before, *:after {
     box-sizing: border-box;   
@@ -39,13 +39,13 @@ $break-large: 60em; // 60em 900px min-width
 
 @mixin breakpoint($break) {
     @if $break == large {  //if the value in the variable $break is equal to "large" then do the following.
-    @media (max-width: $break-large) { @content; } //@content allows us to pass css into our mixins!
+    @media (min-width: $break-large) { @content; } //@content allows us to pass css into our mixins! I had to change all these to min-width to get them to work.
     }
     @else if $break == medium {
-    @media (max-width: $break-medium) { @content; }
+    @media (min-width: $break-medium) { @content; }
     }
     @else if $break == small {
-    @media (max-width: $break-small) { @content; }
+    @media (min-width: $break-small) { @content; }
     } @else {
     @media ($break) { @content; }
     }
@@ -67,7 +67,10 @@ body {
     input, textarea {
         background-color: $input-color;
         flex: 2;
+        margin-bottom: .25em;
     }
+
+
     //had to fix all of these to have just @ include
     //last step
     //here is how it was
@@ -87,15 +90,19 @@ body {
     //       }
     // }
     //How it should have been:
-    @include breakpoint(medium) { @include center(700px) }
-    @include breakpoint(large) { @include center (900px, 70%) }
+    @include breakpoint(medium) {
+         @include center(700px) 
+        }
+    @include breakpoint(large) { 
+        @include center(796px) 
+    }
 }
 
 // fieldset > div {
 //     @include flex-container(column);        
 // }
 
-#contactform fieldset > div { //had to add #contactform
+fieldset > div { //Bro. Blaylock has #contactform Seems to work OK without
     @include flex-container(column);  //took out wrap from (row, wrap)
     label {  //added all of this label and include breakpoint(medium)
         flex: 1;
@@ -113,6 +120,6 @@ body {
     }
 }
 
-h1 {
-    color: $headlines-color;
+h1, h2, h3, h4, h5, h6 {
+    color: $headlines-color;  //Bro Blaylock had h1, h2, h3, h4, h5, h6
 }

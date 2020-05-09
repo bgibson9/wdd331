@@ -60,11 +60,13 @@ Nesting with a media query
 Notice the '&' above. This is the ampersand selector (or parent selector reference). This always refers to the parent selector as the name implies. In our case & = #contactform.
 
 
+medium
 @media only screen and (min-width: 600px) {
 
         /*520px = 32.5em based on 16px size
         @media only screen and (min-width: 32.5em)*/
 
+large
 media only screen and (min-width: 768px) {
 
         /*   56em = 896px   
@@ -98,3 +100,20 @@ This code would center a block element on a page. We might use this, or somethin
 #content {
     @include center;
 }
+
+
+
+I had to change all the following to min-width to get them to work
+@mixin breakpoint($break) {
+    @if $break == large {  //if the value in the variable $break is equal to "large" then do the following.
+    @media (min-width: $break-large) { @content; } //@content allows us to pass css into our mixins! I had to change all these to min-width to get them to work.
+    }
+    @else if $break == medium {
+    @media (min-width: $break-medium) { @content; }
+    }
+    @else if $break == small {
+    @media (min-width: $break-small) { @content; }
+    } @else {
+    @media ($break) { @content; }
+    }
+  } 

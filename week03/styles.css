@@ -12,8 +12,9 @@ body {
 #contactform input, #contactform textarea {
   background-color: #f3ebd5;
   flex: 2;
+  margin-bottom: 0.25em;
 }
-@media (max-width: 31em) {
+@media (min-width: 31em) {
   #contactform {
     width: 90%;
     max-width: 700px;
@@ -21,16 +22,16 @@ body {
     margin-right: auto;
   }
 }
-@media (max-width: 60em) {
+@media (min-width: 60em) {
   #contactform {
-    width: 70%;
-    max-width: 900px;
+    width: 90%;
+    max-width: 796px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-#contactform fieldset > div {
+fieldset > div {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -39,12 +40,12 @@ body {
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
-#contactform fieldset > div label {
+fieldset > div label {
   flex: 1;
   text-align: left;
 }
-@media (max-width: 31em) {
-  #contactform fieldset > div {
+@media (min-width: 31em) {
+  fieldset > div {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -55,13 +56,13 @@ body {
     justify-content: space-between;
     margin-bottom: 1em;
   }
-  #contactform fieldset > div label {
+  fieldset > div label {
     text-align: right;
     margin-right: 1em;
   }
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 
