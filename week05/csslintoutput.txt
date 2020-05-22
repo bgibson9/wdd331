@@ -1,0 +1,4 @@
+Error: No configuration provided for C:\Users\Owner\Documents\WDD331\wdd331\week05\main.css
+    at module.exports (C:\Users\Owner\AppData\Roaming\npm\node_modules\stylelint\lib\utils\configurationError.js:10:14)
+    at C:\Users\Owner\AppData\Roaming\npm\node_modules\stylelint\lib\getConfigForFile.js:56:11
+    at async Promise.all (index 0)
