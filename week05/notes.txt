@@ -1,0 +1,137 @@
+Interpolation
+//interpolation - variables are replaced with their corresponding values
+// 1 $description: "awesome";
+// 2 @warn "Tuts+ is #{$description}!";
+// 1 $answer: 42;
+// 2 @warn "The Answer to the Ultimate Question of Life, the Universe, and Everything is #{$answer}.";
+
+
+// variable assignments
+//colors 
+
+$body-background-color: darkred;
+$form-background-color: white;
+$input-color: white;
+$headlines-color : white;
+
+body {
+    background-color: $body-background-color;
+}
+
+
+Nesting
+
+#contactform {
+    background-color: $form-background-color;
+}
+#contactform input, #contactform textarea {
+    background-color: $input-color;
+}       
+
+looks like this
+
+#contactform {
+    background-color: $form-background-color;
+    input, textarea {
+        background-color: $input-color;
+        flex: 2;
+    }
+} 
+
+Nesting with a media query
+
+#contactform {
+    background-color: $form-background-color;
+    input, textarea {
+        background-color: $input-color;
+        flex: 2;
+    }
+    @media (min-width: $break-small) {
+       & {
+          width: 90%;
+          max-width: 700px;
+          margin-left: auto;
+          margin-right: auto; 
+        } 
+    }
+}
+
+
+Notice the '&' above. This is the ampersand selector (or parent selector reference). This always refers to the parent selector as the name implies. In our case & = #contactform.
+
+
+medium
+@media only screen and (min-width: 600px) {
+
+        /*520px = 32.5em based on 16px size
+        @media only screen and (min-width: 32.5em)*/
+
+large
+media only screen and (min-width: 768px) {
+
+        /*   56em = 896px   
+        @media only screen and (min-width: 56em)  had 900px min-width: 900px; Week 10 changed to 768px; */        
+
+Brother Blaylock
+//set breakpoint sizes
+$break-small: 20em;
+$break-medium: 31em;
+$break-large: 60em;
+
+
+
+.center {
+  width: 90%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+         
+ 
+This code would center a block element on a page. We might use this, or something very similar many times on a typical page. Lets see how it would look as a mixin.
+
+
+@mixin center {
+  width: 90%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#content {
+    @include center;
+}
+
+
+
+I had to change all the following to min-width to get them to work
+@mixin breakpoint($break) {
+    @if $break == large {  //if the value in the variable $break is equal to "large" then do the following.
+    @media (min-width: $break-large) { @content; } //@content allows us to pass css into our mixins! I had to change all these to min-width to get them to work.
+    }
+    @else if $break == medium {
+    @media (min-width: $break-medium) { @content; }
+    }
+    @else if $break == small {
+    @media (min-width: $break-small) { @content; }
+    } @else {
+    @media ($break) { @content; }
+    }
+  } 
+
+
+WEek04
+
+Add following lines to HTML for Bootstrap libraries
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+W04 Activity Installing Bootstrap
+The next option would be to take advantage a CDN (content delivery network). This is a server optimized for speed that has one job...serve up libraries. Bootstrap's CDN can be included by adding the following lines to your html
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+You would also need to include JQuery for this to work.
+
+
+    
