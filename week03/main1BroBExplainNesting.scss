@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+
+//Mixins
+// I would shorten this name. That is really long to type every time.
+// Otherwise the mixin is good.
+@mixin textdeco-fontsize-padbottom ($text-decoration: none, $font-size: 1rem, $padding-bottom: 10px) {
+    text-decoration: $text-decoration;
+    font-size: $font-size;
+    padding-bottom: $padding-bottom;
+}
+
+// The variables look great.
+// Variables
+$main-brand-color: #6495ed;
+$secondary-color-light: #faebd7;
+$secondary-color-darker: #deb887;
+$black: #000;
+$white: #fff;
+$medium-gray: #888888;
+$base-font-sans-serif: Helvetica, Arial, sans-serif;
+$font-serif: 'Lora', serif;
+
+//Nesting
+// Nesting looks good.
+nav ul li {
+    list-style-type: none;
+    a {
+        display: block;
+        font-family: $base-font-sans-serif;
+        font-weight: bold;
+        @include textdeco-fontsize-padbottom;
+        // Remove code that is not longer needed.
+        // text-decoration: none;
+        // font-size: 1rem;
+        // padding-bottom: 10px;
+    }
+}
+
+article {
+    display: block;
+    background-color: white;
+    margin: 30px 15px;
+    padding: 25px;
+    box-shadow: 3px 3px 4px $medium-gray;
+    h2 {
+        @include textdeco-fontsize-padbottom(none, 1.95rem, 50px);
+        // text-decoration: none;
+        // font-size: 1.95em;
+        // padding-bottom: 50px;
+    }
+}
+
+
+
+/* Blue #6495ed
+main bkgd  text on blue sidebar #FAEBD7
+nav links normal and visited #FAEBD7 no underline
+active: #deb887, hover: white and underlined
+Other page links normal and visted: #6495ED no underline
+active: #deb887, hover: underlined
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+header,
+main {
+    margin: 0 auto;
+    /*0 auto; this centers the page*/
+}
+
+body {
+    font-size: 16px;
+    font-family: $base-font-sans-serif;
+    /* margin: 0 auto; Bro. Blaylock said to remove in W01 comments */
+    padding: 0;
+
+}
+
+header {
+    background-color: $main-brand-color;
+    color: $secondary-color-light;
+    font-family: $font-serif;
+    text-align: right;
+    padding: 30px 25px 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+header h1 a {
+    font-size: 1.85rem;
+    color: $secondary-color-light;
+    text-decoration: none;
+}
+
+hr {
+    width: 97%;
+}
+
+// To answer you question This would be a good spot to nest your code.
+//e.g.
+
+// nav {
+//   // 1 level
+//   .title {
+//     color: $secondary-color-light;
+//     text-decoration: none;
+//   }
+//   // 1 level
+//   a {
+//     // 2 level
+//     &:link {
+//       color: $secondary-color-light;
+//     }
+//     // 2 level
+//     &:visited {
+//         color: $secondary-color-light;
+//         text-decoration: none;
+//     }
+//     //2 level
+//     &:hover {
+//         color: $white;
+//         text-decoration: underline;
+//         font-weight: bold;
+//     }
+//     // 2 level
+//     &:active {
+//         color: $secondary-color-darker;
+//         text-decoration: underline;
+//         font-weight: bold;
+//     }
+//   }
+// }
+//
+// Without comments.
+//
+// nav {
+//   .title {
+//     color: $secondary-color-light;
+//     text-decoration: none;
+//   }
+//   a {
+//     &:link {
+//       color: $secondary-color-light;
+//     }
+//     &:visited {
+//         color: $secondary-color-light;
+//         text-decoration: none;
+//     }
+//     &:hover {
+//         color: $white;
+//         text-decoration: underline;
+//         font-weight: bold;
+//     }
+//     &:active {
+//         color: $secondary-color-darker;
+//         text-decoration: underline;
+//         font-weight: bold;
+//     }
+//   }
+// }
+
+
+
+nav title {
+    color: $secondary-color-light;
+    text-decoration: none;
+}
+
+nav a:link {
+    color: $secondary-color-light;
+}
+
+nav a:visited {
+    color: $secondary-color-light;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: $white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+nav a:active {
+    color: $secondary-color-darker;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.page-content {
+    background-color: $secondary-color-light;
+    color: $black;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+main {
+    background-color: $secondary-color-light;
+    a {
+        font-family: $font-serif;
+        text-decoration: none;
+    }
+}
+
+
+// Same thing here.
+main a :link{
+    color: $main-brand-color;
+}
+
+main a:visited {
+    color: $main-brand-color;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+main a:active {
+    color: $secondary-color-darker;
+    text-decoration: none;
+}
+
+
+
+
+// Same thing here.
+article h2 a:link {
+    color: $black;
+    text-decoration: none;
+}
+
+article h2 a:visited {
+    color: $black;
+    text-decoration: none;
+}
+
+article h2 a:hover {
+    color: $main-brand-color;
+    text-decoration: underline;
+}
+
+article h2 a:active {
+    color: $secondary-color-darker;
+}
+
+.post-date {
+    margin-bottom: -25px;
+}
+
+img {
+    align-content: center;
+    width: 100%;
+}
+
+ p a {
+    font-family: $base-font-sans-serif;
+}
+
+
+/*  Media size Medium  */
+/* @media only screen and (min-width: 32.5em) { */
+
+    /*  causing header to not center when switching from small to medium. Also 520px = 32.5em based on 16px size*/
+
+
+/*  Media size Large  */
+@media only screen and (min-width: 56em) {
+        /*   56em = 896px   */
+
+    header {
+        padding: 30px 35px;
+    }
+    heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .page-content {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+    }
+
+    article {
+        margin: 50px 75px;
+        padding: 50px;
+    }
+
+    figure {
+        margin: 0 auto;
+        width: 50%;
+    }
+}
