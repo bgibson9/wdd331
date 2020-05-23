@@ -1,0 +1,82 @@
+$color-6: #000;
+$color-7: #fff;
+$color-8: #74797b;
+
+.cd-primary-nav {   // .summary
+    a {
+        &:link {
+            color: $color-6;//typography colors
+            text-decoration: none;
+        }
+    }   
+        &:visited { // .summary
+            color: $color-6;
+            text-decoration: none;
+        }
+
+        &:hover { // .summary
+            color: $color-7;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        &:active { // .summary
+            color: $color-8;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+.cd-secondary-nav {
+    a {
+        &:link {   // .sidebar Select a Design
+            color: $color-6;//typography colors?
+            text-decoration: none;
+        }
+    }   
+        &:visited { // .sidebar Select a Design
+            color: $color-6;//typography colors?
+            text-decoration: none;
+        }
+    
+        &:hover { // .sidebar Select a Design
+            color: $color-7;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        &:active { // .sidebar Select a Design
+            color: $color-8;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+    
+ul {   // Resources links
+    li {    
+        a {
+            &:link {
+                color: $color-6;
+                text-decoration: none;
+            }
+        }   
+            &:visited { // Resources links
+                color: $color-6;
+                text-decoration: none;
+            }
+
+            &:hover { // Resources links
+                color: $color-7;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            &:active { // Resources links
+                color: $color-8;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+ 
