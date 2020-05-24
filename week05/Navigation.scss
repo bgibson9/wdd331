@@ -2,56 +2,59 @@ $color-6: #000;
 $color-7: #fff;
 $color-8: #74797b;
 
-.cd-primary-nav {   // .summary
+// for the .summary
+.cd-primary-nav {
     a {
         &:link {
-            color: $color-6;//typography colors
+            color: $color-6;
             text-decoration: none;
         }
     }   
-        &:visited { // .summary
+        &:visited {
             color: $color-6;
             text-decoration: none;
         }
 
-        &:hover { // .summary
+        &:hover {
             color: $color-7;
             text-decoration: underline;
             font-weight: bold;
         }
 
-        &:active { // .summary
+        &:active {
             color: $color-8;
             text-decoration: underline;
             font-weight: bold;
         }
 
+//  .sidebar Select a Design
 .cd-secondary-nav {
     a {
-        &:link {   // .sidebar Select a Design
-            color: $color-6;//typography colors?
+        &:link {
+            color: $color-6;
             text-decoration: none;
         }
     }   
-        &:visited { // .sidebar Select a Design
-            color: $color-6;//typography colors?
+        &:visited {
+            color: $color-6;
             text-decoration: none;
         }
     
-        &:hover { // .sidebar Select a Design
+        &:hover {
             color: $color-7;
             text-decoration: underline;
             font-weight: bold;
         }
 
-        &:active { // .sidebar Select a Design
+        &:active {
             color: $color-8;
             text-decoration: underline;
             font-weight: bold;
         }
     }
-    
-ul {   // Resources links
+ 
+//     Resources links    
+ul {
     li {    
         a {
             &:link {
@@ -59,18 +62,18 @@ ul {   // Resources links
                 text-decoration: none;
             }
         }   
-            &:visited { // Resources links
+            &:visited {
                 color: $color-6;
                 text-decoration: none;
             }
 
-            &:hover { // Resources links
+            &:hover { 
                 color: $color-7;
                 text-decoration: underline;
                 font-weight: bold;
             }
 
-            &:active { // Resources links
+            &:active {
                 color: $color-8;
                 text-decoration: underline;
                 font-weight: bold;
