@@ -30,7 +30,8 @@ $loop-end: $num-columns +1;
 	}
 }
 
-// classes - columns and offset - not needed if everything processed
+// classes - columns and offset - not needed if everything processed correctly (I don't know how to test it without a complete html and css file) IN CODEPEN.IO when I remove the classes, the card goes a hair off center so I left them. But I'm guessing they should be deleted from here. I asked Ryan Gale for help, but he didn't understand what I was asking.
+
 .col-1 {
 	@include col(1);
 }
