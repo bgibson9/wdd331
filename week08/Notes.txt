@@ -1,0 +1,19 @@
+// .col-1 {
+// 	@include col(1);
+// }
+
+// .col-2 {
+// 	@include col(2);
+// }
+
+// .col-8 {
+// 	@include col(8);
+// }
+
+// .offset-2 {
+// 	margin-left: 25%;
+// }
+
+// .offset-1 {
+// 	margin-left: 12.5%;
+// } 
