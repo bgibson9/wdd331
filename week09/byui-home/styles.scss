@@ -1,0 +1,172 @@
+@import 'typography';
+@import 'icons';
+
+$sm-break: 48em;
+// colors
+$dark-gray: #727272;
+$med-gray: #b4b3b5;
+$light-gray: #eaeaea;
+$body-font: #020202;
+$link-blue: #0076b6; //why do we have both of these blues?
+$byui-blue: #056cb6;
+
+// Utility classes
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+// Given Code Above *********************************
+
+html,
+body {
+  margin: 0; 
+  padding: 0;
+}
+
+header {
+  margin: 0; //took out auto
+  background-color: $byui-blue;
+}
+
+main {
+  margin: 0;
+  display: flex;
+}
+
+.site-banner {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  line-height: 20px;
+  margin: 0;
+}
+
+.site-banner a {
+  text-decoration: none;
+}
+
+.site-banner__left {
+  font-size: 2rem;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  width: 80px;
+}
+
+.site-banner__right {
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  width: 125px;
+  height: 60px;
+}
+
+.icon-byui-logo:before {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  padding: 1rem 1rem;
+  }
+
+.icon-search,
+.icon-audience,
+.icon-menu {
+    color: #fff;
+    text-decoration:  none;
+    justify-content: space-between;
+    line-height: 60px;
+}
+
+.site-name {
+  background-color: $light-gray;
+  margin: 0;
+  padding: .75rem;
+  text-align: right;
+  font-size: 1.5rem;
+  font-family: 'BYUI Open Sans','sans-serif';
+  font-style: normal;
+  font-weight: 100;
+  border-bottom: 1px solid #000;
+}
+.banners img {//took out img
+  display: block; 
+  margin: auto;
+  margin-top: 35px; 
+  width: 96%;
+  }
+
+.covid-19updates {
+  margin-bottom: 30px;
+}
+
+.image-carousel {
+  display: block;
+  margin: auto;
+  margin-top: 35px;
+  width: 96%;
+}
+
+figure {
+  display: block;
+  margin: auto;
+  margin-top: 35px;
+  width: 96%;
+  border: 1px solid $med-gray;
+  color: $byui-blue;
+  font-family: 'BYUI Open Sans','sans-serif';
+  font-size: .95rem;
+}
+
+.home-ad-caption {
+  padding: 10px;
+}
+
+.audience-button {
+  display: block;
+  margin: auto;
+  border: 1px solid $med-gray;
+  border-radius: 5px;
+  width: 96%;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 35px;
+  padding: 10px;
+}
+
+
+// .icon-search text-white mobile-header-icon:before,
+// .icon-audience text-white mobile-header-icon:before,
+// .icon-menu text-white mobile-header-icon:before {
+//   // flex-flow: row wrap;
+//   // align-items: center;
+//   // align-content: space-between;
+//   height: 100%;
+
+  // flex-direction: row;
+  // flex-flow: row-wrap;
+  // align-items: right;
+
+// }
+
+// 
+
