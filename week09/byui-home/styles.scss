@@ -29,13 +29,13 @@ img {
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
+  border: 0; 
 }
 // Given Starter Code Above *********************************
 
 html,
 body {
-  margin: 0 auto; 
+  margin: 0 ; //auto removed
   padding: 0;
 }
 
@@ -99,7 +99,7 @@ header {
 .site-name {
   background-color: $light-gray;
   margin: 0;
-  padding: .75rem;
+  padding: 1rem;
   text-align: right;
   font-size: 1.25rem;
   font-family: 'BYUI Open Sans','sans-serif';
@@ -108,18 +108,23 @@ header {
   border-bottom: 1px solid #000;
 }
 .banners {
-  margin: 0 auto;
-  margin-top: 35px; 
-  width: 96%;
+  // margin: auto;
+  // margin-top: 35px; 
+  // width: 96%;
+  height: 100%
   }
 
 .semester-updates {
-  display: block;
+  // display: flex;
+  // flex: 2 0 300px;
+  height: 100%;
+  
+  // margin: 15px 0;
 }
 
 .covid-19updates {
-  display: block;
-  margin-top: 30px;
+  // display: flex;
+  margin: 15px 0;
 }
 
 .image-carousel {
@@ -277,6 +282,7 @@ figure {
   margin: auto;
   display: block;
   padding: 0;
+  max-width: 25%;
 }
 
 @media only screen and (min-width: 32em) {
@@ -289,14 +295,20 @@ figure {
   column-gap: 25px;
 }
 
+img.semester-updates{
+  width: 100%
+}
+
 .banners {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.covid-19updates {
-  margin-top: 0px;
+.updates {
+  display: flex;
+  flex: 2 1 300px;
+  padding: 15px;
 }
 
  .image-carousel {
@@ -340,6 +352,11 @@ figure {
 .university-message {
   grid-column: 2 / 3;
   grid-row: 4 / 5;
+}
+
+img.footer-graphic {
+  height: 100px;
+  max-width: 20%;
 }
 }
 
